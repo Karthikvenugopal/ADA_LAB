@@ -2,11 +2,9 @@
 #include <ctime>
 #include <cstdlib>
 using namespace std;
-int main()
+void bub(int n)
 {
-	int n,tmp;
-	cout<<"Enter the number of elements in an array"<<endl;
-	cin>>n;
+	int tmp;
 	int a[n];
 	for(int i = 0;i<n;i++)
 		a[i] = rand()%1000;
@@ -24,10 +22,18 @@ int main()
 		}
 	}
 	pt = clock() - pt;
-	cout<<"Sorted"<<endl;
-	for (int i = 0; i < n-1; i++)
-	{
-		cout<<a[i]<<endl;
-	}
-	cout<<"Process time is: "<<(float)pt/CLOCKS_PER_SEC<<endl;
+	cout<<endl;
+	// for (int i = 0; i < n-1; i++)
+	// {
+	// 	cout<<a[i]<<endl;
+	// }
+	cout<<"Sorted "<<n<<" elements:"<<(float)pt/CLOCKS_PER_SEC<<endl;
+}
+int main()
+{
+	bub(10);
+	bub(100);
+	bub(1000);
+	bub(10000);
+	bub(100000);
 }
