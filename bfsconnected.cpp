@@ -17,7 +17,7 @@ void bfs(int u) {
   
         cout << f << " "; 
         
-        for (auto i = matrix[f].begin(); i != matrix[f].end(); i++) { 
+        for (vector<int>::iterator i = matrix[f].begin(); i != matrix[f].end(); i++) { 
             if (!v[*i]) { 
                 q.push(*i); 
                 v[*i] = true; 
