@@ -14,8 +14,7 @@ void floydWarshall (int graph[][4])  {
         } 
         cout << endl;
     }
-}  
-//INFINITY = 9999
+}
 int main()  {  
     int graph[4][4] = { {0, 4, 9999, 10}, {9999, 0, 6, 9999}, {9999, 9999, 0, 8}, {9999, 9999, 9999, 0} };  
   
