@@ -28,36 +28,46 @@ Graph::Graph(int V)
     T.clear();
 }
 
-void Graph::AddWeightedEdge(int u, int v, int w) {
+void Graph::AddWeightedEdge(int u, int v, int w)
+{
   G.push_back(make_pair(w, edge(u, v)));
 }
 
-int Graph::find_set(int i) {
-    if (i == parent[i]) return i;
-    else return find_set(parent[i]);
+int Graph::find_set(int i)
+{
+    if (i == parent[i])
+        return i;
+    else 
+        return find_set(parent[i]);
 }
  
-void Graph::union_set(int u, int v) {
+void Graph::union_set(int u, int v)
+{
     parent[u] = parent[v];
 }
-void Graph::kruskal() {
+void Graph::kruskal()
+{
     int i, uRep, vRep;
     sort(G.begin(), G.end());
-    for (i = 0; i < G.size(); i++) {
+    for (i = 0; i < G.size(); i++)
+    {
         uRep = find_set(G[i].second.first);
         vRep = find_set(G[i].second.second);
-        if (uRep != vRep) {
+        if (uRep != vRep)
+        {
             T.push_back(G[i]);
             union_set(uRep, vRep);
         }
     }
 }
-void Graph::print() {
+void Graph::print()
+{
     cout << "Edge :" << " Weight" << endl;
     for (int i = 0; i < T.size(); i++) cout << T[i].second.first << " - " << T[i].second.second << " : " << T[i].first << endl;
 }
 
-int main() {
+int main()
+{
     Graph g(6);
     g.AddWeightedEdge(0, 1, 4);
     g.AddWeightedEdge(0, 2, 4);
