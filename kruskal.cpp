@@ -2,10 +2,9 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
- 
 #define edge pair<int,int>
- 
-class Graph {
+class Graph
+{
 private:
     vector<pair<int, edge> > G;
     vector<pair<int, edge> > T;
@@ -20,11 +19,11 @@ public:
     void print();
 };
 
-Graph::Graph(int V) {
+Graph::Graph(int V)
+{
     parent = new int[V];
-
-    for (int i = 0; i < V; i++) parent[i] = i;
- 
+    for (int i = 0; i < V; i++)
+        parent[i] = i;
     G.clear();
     T.clear();
 }
