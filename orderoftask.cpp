@@ -22,8 +22,9 @@ vector<int> findOrder(int numTasks, vector<pair<int, int> >& prerequisites) {
     reverse(toposort.begin(), toposort.end()); 
     return toposort; 
 }  
-int main() { 
-    int numTasks = 3; 
+int main() 
+{ 
+    int numTasks = 3;  
     vector<pair<int, int> > prerequisites; 
     prerequisites.push_back(make_pair(1, 0)); 
     prerequisites.push_back(make_pair(2, 1));
